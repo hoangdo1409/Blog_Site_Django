@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Button Image</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .btn-img {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+      .btn-img:focus, .btn-img:hover {
+        outline: none;
+      }
+      .btn-img img {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button type="button" class="btn btn-img" onclick="toggleImage(this)">
+      <img src="heart-white.png" alt="White Heart" class="img-white">
+      <img src="heart-red.png" alt="Red Heart" class="img-red">
+    </button>
+
+    <script>
+      function toggleImage(btn) {
+        var whiteHeart = btn.querySelector('.img-white');
+        var redHeart = btn.querySelector('.img-red');
+        if (whiteHeart.classList.contains('hidden')) {
+          whiteHeart.classList.remove('hidden');
+          redHeart.classList.add('hidden');
+        } else {
+          whiteHeart.classList.add('hidden');
+          redHeart.classList.remove('hidden');
+        }
+      }
+    </script>
+
+  </body>
+</html>
