@@ -1,2 +1,2 @@
-init:
-	echo "USERNAME: dohoang\n PASSWORD: dohoang" >>
+run:
+	py manage.py runserver

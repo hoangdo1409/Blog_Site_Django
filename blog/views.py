@@ -24,14 +24,14 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_created']
-    paginate_by = 3
+    paginate_by = 100
 
 class UserPostListView(ListView):
     model = Post
     template_name = 'blog/user_posts.html'
     context_object_name = 'posts'
     ordering = ['-date_created']
-    paginate_by = 2
+    paginate_by = 100
 
     def get_query_set(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
@@ -79,23 +79,24 @@ def like_post(request, id ):
     post.like += 1
     post.save()
     # return render(request, 'blog/post_detail.html')
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/post/1/')
 
 def dislike_post(request, id ):
     post = get_object_or_404(Post, pk=id)
+    print(type(id))
     if post.like >= 1:
         post.like -= 1
     elif post.like <= 0:
         post.like -= 0
     post.save()
     # return render(request, 'blog/post_detail.html')
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/post/1/')
 
 def comment_post(request, id):
     post = get_object_or_404(Post, pk=id)
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/post/1/')
 
 
-def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+def news(request):
+    return render(request, 'blog/news.html', {'title': 'News'})

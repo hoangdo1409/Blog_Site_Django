@@ -1,0 +1,23 @@
+.menu-normal {
+    background-color: #cccccc;
+    border-left: solid 1px #dcdcdc;
+    border-right: solid 1px #dcdcdc;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 0px #dddddd;
+  }
+  .menu-select {
+    background-color: #00ffff;
+    border-left: solid 1px #dcdcdc;
+    border-right: solid 1px #dcdcdc;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 0px #dddddd;
+  }
+  .menu-move {
+    background-color: #fcfcfc;
+    border-left: solid 1px #dcdcdc;
+    border-right: solid 1px #dcdcdc;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 0px #dddddd;
+    cursor: pointer;
+  }
+  
